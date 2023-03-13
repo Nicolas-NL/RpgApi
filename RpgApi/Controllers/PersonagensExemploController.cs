@@ -134,16 +134,6 @@ namespace RpgApi.Controllers
         return Ok(listaBusca);
 
     }
-    
-    [HttpPost]
-    public IActionResult AddPersonagem(Personagem novoPersonagem)
-    {
-        if(novoPersonagem.Inteligencia == 0)
-        return BadRequest("Inteligência não pode ter o valor igual a 0 (zero).");
-
-        personagens.Add(novoPersonagem);
-        return Ok(personagens);
-    }
         /*
     List<Personagem> personagens = new List<Personagem>();
     Personagem p1 = new Personagem();
@@ -154,4 +144,4 @@ namespace RpgApi.Controllers
     p1.Nome = "Frodo";
     personagens.Add(p2);*/          
     }
-}
+} 
