@@ -13,6 +13,7 @@ namespace RpgApi.Data
         
         public DbSet<Personagem> Personagens {get; set;}
 
+        public DbSet<Usuario> Usuarios{get; set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Personagem>().HasData
@@ -27,6 +28,18 @@ namespace RpgApi.Data
             new Personagem() { Id = 7, Nome = "Radagast", PontosVida=100, Forca=25, Defesa=11, Inteligencia=35, Classe=ClasseEnum.Mago }
         
             );
+            
+            Usuario user = new Usuario();
+            user.Id = 1;
+            user.Username= "UsuarioAdmin";
+            user.Perfil = "Admin";
+            user.Email = "seuEmail@gmail.com";
+            user.Latitude = -23.5200241;
+            user.Longitude = -46.596498;
+            user.PasswordHash = null;
+            user.PasswordSalt = null;
+            user.Foto = null;
+            modelBuilder.Entity<Usuario>().HasData(user);
         }
     }
 }
